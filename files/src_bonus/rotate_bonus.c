@@ -1,44 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_bonus.h                                    :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffierro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 00:27:03 by ffierro-          #+#    #+#             */
-/*   Updated: 2024/12/26 00:27:06 by ffierro-         ###   ########.fr       */
+/*   Created: 2024/12/25 22:27:31 by ffierro-          #+#    #+#             */
+/*   Updated: 2024/12/26 13:45:04 by ffierro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_BONUS_H
-# define CHECKER_BONUS_H
+#include "../include/push_swap_bonus.h"
 
-# include <limits.h>
-
-# define BUFFER_SIZE 8
-
-typedef struct s_node
+void	op_rotate(t_stack *stack)
 {
-	int				data;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
+	if (stack->size < 2)
+		return ;
+	stack->top = stack->top->next;
+}
 
-typedef struct s_stack
+void	do_ra(t_stack *stack)
 {
-	t_node	*top;
-	int		size;
-	int		min;
-	int		max;
-}	t_stack;
+	op_rotate(stack);
+}
 
-typedef struct s_movement
+void	do_rb(t_stack *stack)
 {
-	int	cost;
-	int	direction_a;
-	int	moves_a;
-	int	direction_b;
-	int	moves_b;
-}	t_movement;
+	op_rotate(stack);
+}
 
-#endif
+void	do_rr(t_stack *stack_a, t_stack *stack_b)
+{
+	op_rotate(stack_a);
+	op_rotate(stack_b);
+}
