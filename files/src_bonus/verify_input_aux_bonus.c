@@ -12,7 +12,7 @@
 
 #include "../include/push_swap_bonus.h"
 
-int	verify_limits(long nb, int sign)
+static int	verify_limits(long nb, int sign)
 {
 	if (sign == 1 && nb > INT_MAX)
 		return (0);
@@ -21,7 +21,7 @@ int	verify_limits(long nb, int sign)
 	return (1);
 }
 
-void	get_sign_number(const char *nptr, int *i, int *sign)
+static void	get_sign_number(const char *nptr, int *i, int *sign)
 {
 	if (nptr[*i] == '-' || nptr[*i] == '+')
 	{

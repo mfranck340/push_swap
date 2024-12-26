@@ -12,7 +12,7 @@
 
 #include "../include/push_swap_bonus.h"
 
-t_stack	*stack_init(void)
+static t_stack	*stack_init(void)
 {
 	t_stack	*stack;
 
@@ -24,16 +24,6 @@ t_stack	*stack_init(void)
 	return (stack);
 }
 
-int	count_elements(char **arr)
-{
-	int	count;
-
-	count = 0;
-	while (arr[count])
-		count++;
-	return (count);
-}
-
 void	ini_top(t_stack *stack, t_node *node)
 {
 	stack->top = node;
@@ -43,7 +33,7 @@ void	ini_top(t_stack *stack, t_node *node)
 	stack->max = node->data;
 }
 
-int	stack_push(t_stack *stack, int data)
+static int	stack_push(t_stack *stack, int data)
 {
 	t_node	*node;
 

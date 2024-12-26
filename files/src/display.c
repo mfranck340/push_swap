@@ -12,7 +12,7 @@
 
 #include "../include/push_swap.h"
 
-void	print_content(int n_stack, t_node **node_a, t_node **node_b)
+static void	print_content(int n_stack, t_node **node_a, t_node **node_b)
 {
 	if (n_stack == 0)
 	{
@@ -26,7 +26,7 @@ void	print_content(int n_stack, t_node **node_a, t_node **node_b)
 	}
 }
 
-void	show_stacks(t_stack *stack_a, t_stack *stack_b)
+static void	show_stacks(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*node_a;
 	t_node	*node_b;
@@ -52,7 +52,7 @@ void	show_stacks(t_stack *stack_a, t_stack *stack_b)
 	ft_printf("_\t_\nA\tB\n");
 }
 
-void	show_stack(t_stack *stack, char letter)
+static void	show_stack(t_stack *stack, char letter)
 {
 	t_node	*node;
 	t_node	*top;

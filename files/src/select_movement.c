@@ -12,7 +12,7 @@
 
 #include "../include/push_swap.h"
 
-void	modify_movement(t_stack *stack_a, t_stack *stack_b,
+static void	modify_movement(t_stack *stack_a, t_stack *stack_b,
 	t_movement **movements)
 {
 	int		mov_aux;
@@ -35,7 +35,7 @@ void	modify_movement(t_stack *stack_a, t_stack *stack_b,
 	}
 }
 
-void	optimize_movement(t_stack *stack_a, t_stack *stack_b,
+static void	optimize_movement(t_stack *stack_a, t_stack *stack_b,
 	t_movement **movements)
 {
 	if (movements[1]->direction_a == movements[1]->direction_b)
@@ -49,7 +49,7 @@ void	optimize_movement(t_stack *stack_a, t_stack *stack_b,
 		modify_movement(stack_a, stack_b, movements);
 }
 
-void	update_movement(t_stack *stack_b, t_movement **movements, int j,
+static void	update_movement(t_stack *stack_b, t_movement **movements, int j,
 	int n_stack)
 {
 	int	*moves;

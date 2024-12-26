@@ -12,13 +12,14 @@
 
 #include "../include/push_swap.h"
 
-void	sort_stack_b(t_stack *stack, t_movement *movement)
+static void	sort_stack_b(t_stack *stack, t_movement *movement)
 {
 	calculate_moves(stack, movement, stack->max, 1);
 	do_move_b(stack, movement);
 }
 
-void	put_all_back(t_stack *stack_a, t_stack *stack_b, t_movement **movements)
+static void	put_all_back(t_stack *stack_a, t_stack *stack_b,
+	t_movement **movements)
 {
 	t_node	*node_a;
 	t_node	*node_b;
@@ -40,7 +41,7 @@ void	put_all_back(t_stack *stack_a, t_stack *stack_b, t_movement **movements)
 	}
 }
 
-void	resolve_problem(t_stack *stack_a, t_stack *stack_b,
+static void	resolve_problem(t_stack *stack_a, t_stack *stack_b,
 	t_movement **movements)
 {
 	int	i;
@@ -69,7 +70,8 @@ void	resolve_problem(t_stack *stack_a, t_stack *stack_b,
 	}
 }
 
-void	clean_all(t_stack *stack_a, t_stack *stack_b, t_movement **movements)
+static void	clean_all(t_stack *stack_a, t_stack *stack_b,
+	t_movement **movements)
 {
 	stack_free(stack_a);
 	stack_free(stack_b);

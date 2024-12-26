@@ -12,7 +12,7 @@
 
 #include "../include/push_swap_bonus.h"
 
-char	*update_str(char *str)
+static char	*update_str(char *str)
 {
 	char	*new_str;
 	int		i;
@@ -40,7 +40,7 @@ char	*update_str(char *str)
 	return (new_str);
 }
 
-char	*read_line(char *str)
+static char	*read_line(char *str)
 {
 	char	*line;
 	int		i;
@@ -65,7 +65,7 @@ char	*read_line(char *str)
 	return (line);
 }
 
-char	*free_memory(char *str, char *buffer)
+static char	*free_memory(char *str, char *buffer)
 {
 	if (str)
 		free(str);
@@ -74,7 +74,7 @@ char	*free_memory(char *str, char *buffer)
 	return (0);
 }
 
-char	*read_file(int fd, char *str)
+static char	*read_file(int fd, char *str)
 {
 	char	*buffer;
 	int		bytes;

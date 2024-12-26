@@ -12,7 +12,7 @@
 
 #include "../include/push_swap.h"
 
-int	check_characters(char *input)
+static int	check_characters(char *input)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	check_characters(char *input)
 	return (1);
 }
 
-int	check_numbers(char **arr, int *n_arr)
+static int	check_numbers(char **arr, int *n_arr)
 {
 	int	i;
 	int	n_aux;
@@ -46,7 +46,7 @@ int	check_numbers(char **arr, int *n_arr)
 	return (1);
 }
 
-int	check_repeated(int *n_arr, int size)
+static int	check_repeated(int *n_arr, int size)
 {
 	int	i;
 	int	j;

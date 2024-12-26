@@ -12,7 +12,7 @@
 
 #include "../include/push_swap_bonus.h"
 
-void	op_swap(t_stack *stack)
+static void	op_swap(t_stack *stack)
 {
 	t_node	*node;
 	int		tmp;

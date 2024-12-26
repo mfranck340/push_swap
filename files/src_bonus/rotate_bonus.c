@@ -12,7 +12,7 @@
 
 #include "../include/push_swap_bonus.h"
 
-void	op_rotate(t_stack *stack)
+static void	op_rotate(t_stack *stack)
 {
 	if (stack->size < 2)
 		return ;

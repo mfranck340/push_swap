@@ -73,7 +73,7 @@ static int	process_instructions(t_stack *stack_a, t_stack *stack_b)
 	return (1);
 }
 
-void	check_stacks(t_stack *stack_a, t_stack *stack_b)
+static void	check_stacks(t_stack *stack_a, t_stack *stack_b)
 {
 	if (is_sorted(stack_a) && stack_b->size == 0)
 		ft_putstr_fd("OK\n", 1);

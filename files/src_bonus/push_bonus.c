@@ -12,7 +12,7 @@
 
 #include "../include/push_swap_bonus.h"
 
-void	update_min_max(t_stack *stack)
+static void	update_min_max(t_stack *stack)
 {
 	t_node	*node;
 	int		i;
@@ -32,7 +32,7 @@ void	update_min_max(t_stack *stack)
 	}
 }
 
-t_node	*get_top_node(t_stack *stack)
+static t_node	*get_top_node(t_stack *stack)
 {
 	t_node	*node;
 
@@ -56,7 +56,7 @@ t_node	*get_top_node(t_stack *stack)
 	return (node);
 }
 
-void	op_push(t_stack *stack_a, t_stack *stack_b)
+static void	op_push(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*node;
 

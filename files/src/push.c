@@ -12,7 +12,7 @@
 
 #include "../include/push_swap.h"
 
-void	update_min_max(t_stack *stack)
+static void	update_min_max(t_stack *stack)
 {
 	t_node	*node;
 	int		i;
@@ -32,7 +32,7 @@ void	update_min_max(t_stack *stack)
 	}
 }
 
-t_node	*get_top_node(t_stack *stack)
+static t_node	*get_top_node(t_stack *stack)
 {
 	t_node	*node;
 

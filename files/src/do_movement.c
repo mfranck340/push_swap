@@ -12,14 +12,14 @@
 
 #include "../include/push_swap.h"
 
-int	get_min_movement(t_movement *movement)
+static int	get_min_movement(t_movement *movement)
 {
 	if (movement->moves_a > movement->moves_b)
 		return (movement->moves_b);
 	return (movement->moves_a);
 }
 
-void	do_move_a(t_stack *stack_a, t_movement *movement)
+static void	do_move_a(t_stack *stack_a, t_movement *movement)
 {
 	int	i;
 
