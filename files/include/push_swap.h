@@ -80,5 +80,7 @@ void	stack_free(t_stack *stack);
 void	restart_movement(t_movement *movement);
 void	restart_best_movement(t_movement *movement);
 void	sort_little_stack(t_stack *stack);
+int		allocate_movement(t_movement ***movements, t_stack *stack_a,
+			t_stack *stack_b);
 
 #endif

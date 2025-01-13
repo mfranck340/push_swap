@@ -16,19 +16,19 @@ static void	sort_three(t_stack *stack)
 {
 	t_node	*node;
 
-	if (is_sorted(stack))
+	if (is_final_sorted(stack))
 		return ;
 	node = stack->top;
 	if (node->data < node->prev->data)
 	{
 		do_sa(stack);
-		if (!is_sorted(stack))
+		if (!is_final_sorted(stack))
 			do_ra(stack);
 	}
 	else if (node->data > node->next->data && node->data > node->prev->data)
 	{
 		do_ra(stack);
-		if (!is_sorted(stack))
+		if (!is_final_sorted(stack))
 			do_sa(stack);
 	}
 	else

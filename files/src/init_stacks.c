@@ -75,3 +75,29 @@ int	init_stacks(t_stack **stack_a, t_stack **stack_b, char **input, int size)
 	}
 	return (1);
 }
+
+int	allocate_movement(t_movement ***movements, t_stack *stack_a,
+	t_stack *stack_b)
+{
+	*movements = (t_movement **)malloc(sizeof(t_movement *) * 2);
+	if (!(*movements))
+	{
+		stack_free(stack_a);
+		stack_free(stack_b);
+		return (0);
+	}
+	(*movements)[0] = (t_movement *)malloc(sizeof(t_movement));
+	(*movements)[1] = (t_movement *)malloc(sizeof(t_movement));
+	if (!(*movements)[0] || !(*movements)[1])
+	{
+		if ((*movements)[0])
+			free((*movements)[0]);
+		if ((*movements)[1])
+			free((*movements)[1]);
+		free(*movements);
+		stack_free(stack_a);
+		stack_free(stack_b);
+		return (0);
+	}
+	return (1);
+}

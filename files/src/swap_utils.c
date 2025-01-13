@@ -21,7 +21,7 @@ int	is_sorted(t_stack *stack)
 	top = stack->top;
 	while (node->next != top)
 	{
-		if (node->data > node->next->data)
+		if (node->data < node->next->data)
 			return (0);
 		node = node->next;
 	}
@@ -37,7 +37,7 @@ int	is_final_sorted(t_stack *stack)
 	top = stack->top;
 	while (node->next != top)
 	{
-		if (node->data < node->next->data)
+		if (node->data > node->next->data)
 			return (0);
 		node = node->next;
 	}

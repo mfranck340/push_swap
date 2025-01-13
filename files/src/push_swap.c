@@ -95,10 +95,10 @@ int	main(int argc, char **argv)
 	}
 	if (!init_stacks(&stack_a, &stack_b, argv, argc))
 		return (0);
-	movements = (t_movement **)malloc(sizeof(t_movement *) * 2);
-	movements[0] = (t_movement *)malloc(sizeof(t_movement));
-	movements[1] = (t_movement *)malloc(sizeof(t_movement));
-	resolve_problem(stack_a, stack_b, movements);
+	if (!allocate_movement(&movements, stack_a, stack_b))
+		return (0);
+	if (!is_final_sorted(stack_a))
+		resolve_problem(stack_a, stack_b, movements);
 	clean_all(stack_a, stack_b, movements);
 	return (0);
 }
